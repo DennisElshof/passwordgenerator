@@ -1,12 +1,12 @@
 #include "passwordrequirements.h"
 
-PasswordRequirements::PasswordRequirements(unsigned int uiMinimalLength, unsigned int uiMaximalLength)
+Settings::PasswordRequirements::PasswordRequirements(unsigned int uiMinimalLength, unsigned int uiMaximalLength)
     :uiMinLength(uiMinimalLength), uiMaxLength(uiMaximalLength)
 {
 
 }
 
-bool PasswordRequirements::validateLength(unsigned int uiLength)
+bool Settings::PasswordRequirements::validateLength(unsigned int uiLength)
 {
     if((uiLength < uiMinLength) | (uiLength >uiMaxLength))
     {
@@ -15,7 +15,7 @@ bool PasswordRequirements::validateLength(unsigned int uiLength)
     return true;
 }
 
-bool PasswordRequirements::validateParameterCombination(unsigned int uiLength, bool bLowercase, bool bUppercase, bool bNumbers, bool bSymbols)
+bool Settings::PasswordRequirements::validateParameterCombination(unsigned int uiLength, bool bLowercase, bool bUppercase, bool bNumbers, bool bSymbols)
 {
     bool bLengtIsOK;
     bool bCharacterSetIsOK;
@@ -28,7 +28,7 @@ bool PasswordRequirements::validateParameterCombination(unsigned int uiLength, b
     return false;
 }
 
-bool PasswordRequirements::setLength(unsigned int uiLength)
+bool Settings::PasswordRequirements::setLength(unsigned int uiLength)
 {
     if(validateLength(uiLength))
     {
@@ -38,7 +38,7 @@ bool PasswordRequirements::setLength(unsigned int uiLength)
     return false;
 }
 
-bool PasswordRequirements::setLowercase(bool bUseLowercase)
+bool Settings::PasswordRequirements::setLowercase(bool bUseLowercase)
 {
     if(validateParameterCombination(uiPasswordLength, bUseLowercase, bUppercaseLetters, bNumbers, bSymbols))
     {
@@ -48,7 +48,7 @@ bool PasswordRequirements::setLowercase(bool bUseLowercase)
     return false;
 }
 
-bool PasswordRequirements::setUppercase(bool bUseUppercase)
+bool Settings::PasswordRequirements::setUppercase(bool bUseUppercase)
 {
     if(validateParameterCombination(uiPasswordLength, bLowercaseLetters, bUseUppercase, bNumbers, bSymbols))
     {
@@ -58,7 +58,7 @@ bool PasswordRequirements::setUppercase(bool bUseUppercase)
     return false;
 }
 
-bool PasswordRequirements::setNumbers(bool bUseNumbers)
+bool Settings::PasswordRequirements::setNumbers(bool bUseNumbers)
 {
     if(validateParameterCombination(uiPasswordLength, bLowercaseLetters, bUppercaseLetters, bUseNumbers, bSymbols))
     {
@@ -68,7 +68,7 @@ bool PasswordRequirements::setNumbers(bool bUseNumbers)
     return false;
 }
 
-bool PasswordRequirements::setSymbols(bool bUseSymbols)
+bool Settings::PasswordRequirements::setSymbols(bool bUseSymbols)
 {
     if(validateParameterCombination(uiPasswordLength, bLowercaseLetters, bUppercaseLetters, bNumbers, bUseSymbols))
     {
@@ -78,7 +78,7 @@ bool PasswordRequirements::setSymbols(bool bUseSymbols)
     return false;
 }
 
-PasswordRequirements::~PasswordRequirements()
+Settings::PasswordRequirements::~PasswordRequirements()
 {
 
 }

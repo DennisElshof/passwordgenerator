@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "passwordrequirements.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,7 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_amountOfChars_valueChanged(int arg1);
+    void on_amountOfChars_valueChanged(int amount);
 
     void on_useLowercase_toggled(bool checked);
 
@@ -28,6 +29,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Settings::PasswordRequirements *userInterfaceSettings;
 };
 
 #endif // MAINWINDOW_H

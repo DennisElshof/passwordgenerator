@@ -18,11 +18,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     randomnumbergenerator.cpp \
     passwordrequirements.cpp \
-    puttowindow.cpp
+    puttowindow.cpp \
+    errormessage.cpp \
+    errordialog.cpp
 
 HEADERS  += mainwindow.h \
     randomnumbergenerator.h \
     passwordrequirements.h \
-    puttowindow.h
+    puttowindow.h \
+    errormessage.h \
+    errordialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    errordialog.ui
