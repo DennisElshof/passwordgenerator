@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "passwordrequirements.h"
+#include "errordialog.h"
 
 namespace Ui {
 class MainWindow;

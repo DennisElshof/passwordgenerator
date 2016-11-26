@@ -2,6 +2,7 @@
 #define ERRORDIALOG_H
 
 #include <QDialog>
+#include <QString>
 
 namespace Ui {
 class ErrorDialog;
@@ -14,6 +15,7 @@ class ErrorDialog : public QDialog
 public:
     explicit ErrorDialog(QWidget *parent = 0);
     ~ErrorDialog();
+    void showMessage(QString messageText);
 
 private:
     Ui::ErrorDialog *ui;

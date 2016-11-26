@@ -12,3 +12,8 @@ ErrorDialog::~ErrorDialog()
 {
     delete ui;
 }
+
+void ErrorDialog::showMessage(QString messageText)
+{
+    ui->errorMessage->setText(messageText);
+}

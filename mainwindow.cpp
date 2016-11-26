@@ -18,7 +18,7 @@ void MainWindow::on_amountOfChars_valueChanged(int amount)
 {
     if(amount < 1)
     {
-        // Error: Length cannot be < 1
+        // Error: Amount of characters cannot be negative
     }
     else
     {
