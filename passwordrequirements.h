@@ -5,8 +5,12 @@ namespace Settings {
     class PasswordRequirements
     {
     private:
-       unsigned int uiMinLength;
-       unsigned int uiMaxLength;
+       // Constructor
+       PasswordRequirements(unsigned int uiMinimalLength = 5, unsigned int uiMaximalLength = 30);
+       // Destructor
+       ~PasswordRequirements();
+       unsigned int uiMinLength = 5;
+       unsigned int uiMaxLength = 30;
        unsigned int uiPasswordLength;
        bool bLowercaseLetters;
        bool bUppercaseLetters;
@@ -15,20 +19,21 @@ namespace Settings {
        bool validateLength(unsigned int iLength);
        bool validateParameterCombination(unsigned int uiLength, bool bLowercase, bool bUppercase, bool bNumbers, bool bSymbols);
     public:
-        // Constructor
-        PasswordRequirements(unsigned int uiMinimalLength, unsigned int uiMaximalLength);
-        // Setter used by UI
+       static PasswordRequirements& instance(void);
+
+        // Setters (used by UI )
         bool setLength(unsigned int uiLength);
-        // Setter used by UI
         bool setLowercase(bool bUseLowercase);
-        // Setter used by UI
         bool setUppercase(bool bUseUppercase);
-        // Setter used by UI
         bool setNumbers(bool bUseNumbers);
-        // Setter used by UI
         bool setSymbols(bool bUseSymbols);
-        // Destructor
-        ~PasswordRequirements();
+
+        // Getters (used by Statemachine )
+        bool getLength(void) const;
+        bool getLowercase(void) const;
+        bool getUppercase(void) const;
+        bool getNumbers(void) const;
+        bool getSymbols(void) const;
     };
 }
 #endif // PASSWORDREQUIREMENTS_H

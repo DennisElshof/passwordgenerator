@@ -3,14 +3,13 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow), userInterfaceSettings(new Settings::PasswordRequirements(5, 30))
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
 
 MainWindow::~MainWindow()
 {
-    delete userInterfaceSettings;
     delete ui;
 }
 

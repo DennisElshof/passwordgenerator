@@ -20,14 +20,18 @@ SOURCES += main.cpp\
     passwordrequirements.cpp \
     puttowindow.cpp \
     errormessage.cpp \
-    errordialog.cpp
+    errordialog.cpp \
+    generatepassword.cpp \
+    randomgenerators.cpp
 
 HEADERS  += mainwindow.h \
     randomnumbergenerator.h \
     passwordrequirements.h \
     puttowindow.h \
     errormessage.h \
-    errordialog.h
+    errordialog.h \
+    generatepassword.h \
+    randomgenerators.h
 
 FORMS    += mainwindow.ui \
     errordialog.ui
