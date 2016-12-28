@@ -91,7 +91,7 @@ bool PasswordRequirements::setSymbols(bool bUseSymbols)
     return false;
 }
 
-bool PasswordRequirements::getLength(void) const
+unsigned int PasswordRequirements::getLength(void) const
 {
    return uiPasswordLength;
 }

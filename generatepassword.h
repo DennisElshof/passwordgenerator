@@ -1,15 +1,22 @@
 #ifndef GENERATEPASSWORD_H
 #define GENERATEPASSWORD_H
 
-namespace Generators {
+#include <string>
+#include "randomgenerators.h"
+#include "randomnumbergenerator.h"
+#include "passwordrequirements.h"
 
+
+namespace Generators {
    class GeneratePassword
    {
    public:
-      GeneratePassword();
+      GeneratePassword(RandomGenerators generator);
       ~GeneratePassword();
+      string generatePassword( void );
    private:
-
+      RandomGenerators * pwGenerators;
+      RandomNumberGenerator * myGenerator;
    };
 }
 

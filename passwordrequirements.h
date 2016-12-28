@@ -29,7 +29,7 @@ namespace Settings {
         bool setSymbols(bool bUseSymbols);
 
         // Getters (used by Statemachine )
-        bool getLength(void) const;
+        unsigned int getLength(void) const;
         bool getLowercase(void) const;
         bool getUppercase(void) const;
         bool getNumbers(void) const;

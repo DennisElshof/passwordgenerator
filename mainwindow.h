@@ -28,6 +28,8 @@ private slots:
 
     void on_useSymbols_toggled(bool checked);
 
+    void on_generate_clicked();
+
 private:
     Ui::MainWindow *ui;
     Settings::PasswordRequirements *userInterfaceSettings;

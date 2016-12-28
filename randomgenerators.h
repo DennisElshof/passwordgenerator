@@ -11,20 +11,22 @@ namespace Generators {
       SMALL_LETTER = 0,
       CAPITAL_LETTER = 1,
       NUMBER = 2,
+      SYMBOLS = 3,
    };
 
    class RandomGenerators
    {
    public:
-      static RandomGenerators& instance(void);
-      bool setSeedNow(GeneratorType seed);
-      unsigned int generate(GeneratorType generator);
+      // static RandomGenerators& instance(void);
+      bool setSeedNow ( GeneratorType seed );
+      unsigned int generate ( GeneratorType generator );
+      RandomGenerators();
+      ~RandomGenerators();
    private:
+      unsigned int generateSymbol ( void );
       RandomNumberGenerator * smallLetterGenerator;
       RandomNumberGenerator * capitalLetterGenerator;
       RandomNumberGenerator * numberGenerator;
-      RandomGenerators();
-      ~RandomGenerators();
    };
 }
 #endif // RANDOMGENERATORS_H

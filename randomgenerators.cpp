@@ -12,6 +12,8 @@ smallLetterGenerator = new RandomNumberGenerator(97, 122);
 capitalLetterGenerator = new RandomNumberGenerator(65, 90);
 
 // Generator for numbers between 0 - 9&numberGenerator = new RandomNumberGenerator(0, 9);
+numberGenerator = new RandomNumberGenerator(0,9);
+
 
 }
 
@@ -22,11 +24,11 @@ RandomGenerators::~RandomGenerators()
    delete numberGenerator;
 }
 
-RandomGenerators& RandomGenerators::instance(void)
-{
-   static RandomGenerators theInstance;
-   return theInstance;
-}
+// RandomGenerators& RandomGenerators::instance(void)
+// {
+//    static RandomGenerators theInstance;
+//    return theInstance;
+// }
 
 
 bool RandomGenerators::setSeedNow(Generators::GeneratorType seed)
@@ -42,6 +44,8 @@ bool RandomGenerators::setSeedNow(Generators::GeneratorType seed)
    case GeneratorType::NUMBER:
       numberGenerator->seednow();
       break;
+   case GeneratorType::SYMBOLS:
+      // generate error
    default:
       return false;
    }
@@ -50,20 +54,28 @@ bool RandomGenerators::setSeedNow(Generators::GeneratorType seed)
 
 unsigned int RandomGenerators::generate(GeneratorType generator)
 {
-   unsigned int uiGenerated = 0;
    switch (generator)
    {
    case Generators::GeneratorType::SMALL_LETTER:
-      uiGenerated = smallLetterGenerator->next();
-      break;
+      return smallLetterGenerator->next();
+
    case Generators::GeneratorType::CAPITAL_LETTER:
-      uiGenerated = capitalLetterGenerator->next();
-      break;
+      return capitalLetterGenerator->next();
+
    case Generators::GeneratorType::NUMBER:
-      uiGenerated = numberGenerator->next();
-      break;
+      return numberGenerator->next();
+
+   case Generators::GeneratorType::SYMBOLS:
+        return this->generateSymbol();
+
    default:
-      break;
+       // Report error
+      return 0;
    }
-   return uiGenerated;
+}
+
+unsigned int RandomGenerators::generateSymbol ( void )
+{
+
+    return 0;
 }

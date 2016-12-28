@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "generatepassword.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -58,4 +59,11 @@ void MainWindow::on_useSymbols_toggled(bool checked)
     {
         // Error: Invalid parameter combination
     }
+}
+
+void MainWindow::on_generate_clicked()
+{
+
+    // Generators::GeneratePasswordFactory::generatePassword();
+
 }
