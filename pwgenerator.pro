@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     errormessage.cpp \
     errordialog.cpp \
     generatepassword.cpp \
-    randomgenerators.cpp
+    randomgenerators.cpp \
+    generatepasswordfactory.cpp
 
 HEADERS  += mainwindow.h \
     randomnumbergenerator.h \
@@ -31,7 +32,8 @@ HEADERS  += mainwindow.h \
     errormessage.h \
     errordialog.h \
     generatepassword.h \
-    randomgenerators.h
+    randomgenerators.h \
+    generatepasswordfactory.h
 
 FORMS    += mainwindow.ui \
     errordialog.ui

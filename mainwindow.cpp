@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "generatepassword.h"
+#include "generatepasswordfactory.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -63,7 +63,7 @@ void MainWindow::on_useSymbols_toggled(bool checked)
 
 void MainWindow::on_generate_clicked()
 {
-
-    // Generators::GeneratePasswordFactory::generatePassword();
+    string password;
+    password = Generators::GeneratePasswordFactory::instance().generatePassword();
 
 }
